@@ -3,7 +3,6 @@
     margin: 0;
 }
 
-/* @import url('https://fonts.googleapis.com/css2?family=Asset&family=Cabin:ital,wght@0,400;0,500;0,700;1,400&display=swap'); */
 
 :root {
     --magenta: #B55AB7;
@@ -32,7 +31,8 @@ body {
 }
 
 h1.special {
-    font-family: 'Asset', cursive;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
 }
 
 h1 {
