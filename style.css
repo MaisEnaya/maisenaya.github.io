@@ -25,11 +25,8 @@
 
 body {
     /* background-color: var(--white); */
-    /* background-color: var(--fun); */
     background-color: hsl(var(--fun), 100%, 90%);
-
     color: var(--black);
-    /* color: hsl(var(--fun), 100%, 90%); */
     transition: color 0.3s ease;
     font-family: 'Cabin', sans-serif;
 }
