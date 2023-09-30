@@ -11,21 +11,14 @@
     --black: #191E25;
     --pink: #D392D3;
     --darkMagenta: #8B3779;
-    --fun: 0;
+    --fun: 300;
     /* fun hue changes on mouse position, for fun! */
 
 }
 
-.content {
-    height: 100vh;
-    width: 100vw;
-    z-index: -1;
-    position: fixed;
-}
-
 body {
-    /* background-color: var(--white); */
-    background-color: hsl(var(--fun), 100%, 90%);
+    background-color: var(--white);
+    /* background-color: hsl(var(--fun), 100%, 90%); */
     color: var(--black);
     transition: color 0.3s ease;
     font-family: 'Cabin', sans-serif;
@@ -43,6 +36,7 @@ h1.special {
 h1.special span {
     font-family: 'Playfair Display',
         serif;
+
 }
 
 h1 {
@@ -56,6 +50,8 @@ h2 {
     font-family: 'Raleway', sans-serif;
     font-size: 1.5em;
     text-align: left;
+    margin: 1em 0;
+    text-transform: capitalize;
 }
 
 h3 {
@@ -67,19 +63,47 @@ p {
 }
 
 /* end of fonts styling */
+
+/* buttons */
+/* resetting defualt button styling */
 button {
+    background-color: transparent;
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    padding: 0;
+}
+
+.funHover:hover {
+    background-color: hsl(var(--fun), 60%, 90%);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.funHover:hover .frame {
+    background-color: hsl(var(--fun), 40%, 90%);
+    text-decoration: underline;
+    cursor: pointer;
+    outline: hsl(var(--fun), 40%, 60%) solid 10px;
+
+}
+
+/* 
+button .frame:hover {
+    background-color: hsl(var(--fun), 40%, 90%);
+
+} */
+
+/* button {
     background-color: hsl(var(--fun), 100%, 90%);
     border-radius: 25px;
     padding: .25em 2em;
     border: none;
     margin: 1em;
 }
+ */
 
-button:hover {
-    background-color: var(--pink);
-    text-decoration: underline;
-    cursor: pointer;
-}
 
 .grid {
     display: grid !important;
@@ -113,8 +137,9 @@ button:hover {
 /* end of hero section */
 /* start of featured work section */
 
-.featured-work-grid {
+.featured-work.grid {
     grid-column: 1/13;
+    row-gap: 2em;
 }
 
 .bar {
@@ -124,6 +149,7 @@ button:hover {
 
 .work-grid {
     grid-column: 2/12;
+    display: grid;
     row-gap: 200px;
 }
 
@@ -131,12 +157,56 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2em;
+    align-items: end;
+
 }
 
 .frame {
-    outline: var(--fun) solid 10px;
+    background-color: var(--white);
+    outline: hsl(var(--fun), 10%, 60%) solid 10px;
+    filter: drop-shadow(0px 0px 60px hsl(var(--fun), 40%, 30%));
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 630px; */
+    /* height: 500px; */
+
 }
 
+
+.frame::before {
+    /* Create a pseudo-element to overlay the image */
+    content: "";
+    background-color: hsl(var(--fun), 40%, 30%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Ensure it's above the image */
+    mix-blend-mode: hue;
+    opacity: .5;
+}
+
+.frame img {
+    max-width: 40vw;
+    height: 40vw;
+    object-fit: cover;
+    margin: auto;
+}
+
+.img-container {
+    margin: auto;
+    padding: 2em;
+}
+
+.work-cell .text {
+    align-content: end;
+    display: grid;
+    padding: 1em;
+    text-align: left;
+    margin-bottom: 2em;
+}
 
 /* end of featured work section */
 /* end of homepage */
@@ -150,6 +220,22 @@ button:hover {
 
     .desktop {
         display: none;
+    }
+
+    .work-cell {
+        display: block;
+    }
+
+    .img-container {
+        margin: auto;
+        padding: 10px;
+    }
+
+    .frame img {
+        max-width: 65vw;
+        height: 65vw;
+        object-fit: cover;
+        margin: auto;
     }
 
 }
