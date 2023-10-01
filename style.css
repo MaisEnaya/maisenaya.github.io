@@ -77,15 +77,31 @@ button {
 
 .funHover:hover {
     background-color: hsl(var(--fun), 60%, 90%);
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
 }
 
+/* resource refrenced for effecting multiple elemnts on hover
+ https://www.tutorialspoint.com/how-to-affect-other-elements-when-one-element-is-hovered-in-html#:~:text=To%20affect%20other%20elements%20when%20one%20element%20is%20hovered%2C%20an,hover%20affect%20is%20then%20visible. */
 .funHover:hover .frame {
-    background-color: hsl(var(--fun), 40%, 90%);
+    background-color: hsl(var(--fun), 60%, 90%);
     text-decoration: underline;
     cursor: pointer;
     outline: hsl(var(--fun), 40%, 60%) solid 10px;
+
+}
+
+.funHover:hover .workH {
+    color: hsl(var(--fun), 80%, 50%);
+    /* mix-blend-mode: hard-light; */
+    /* text-shadow: -2px 0px 0px var(--magenta); */
+    text-shadow: -1px 1px 0px #000,
+        1px 1px 0px #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+    /* text outline with text shadow https://www.educative.io/answers/how-to-create-a-text-outline-using-css */
+    /* font-size: 2em; */
+    transition: all .5s ease;
 
 }
 
@@ -150,14 +166,14 @@ button .frame:hover {
 .work-grid {
     grid-column: 2/12;
     display: grid;
-    row-gap: 200px;
+    row-gap: 10%;
 }
 
 .work-cell {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2em;
-    align-items: end;
+    align-items: center;
 
 }
 
@@ -189,8 +205,8 @@ button .frame:hover {
 }
 
 .frame img {
-    max-width: 40vw;
-    height: 40vw;
+    max-width: 300px;
+    height: 300px;
     object-fit: cover;
     margin: auto;
 }
@@ -201,11 +217,12 @@ button .frame:hover {
 }
 
 .work-cell .text {
-    align-content: end;
+    align-content: center;
     display: grid;
     padding: 1em;
     text-align: left;
-    margin-bottom: 2em;
+    font-size: 1.25em;
+    /* margin-bottom: 2em; */
 }
 
 /* end of featured work section */
