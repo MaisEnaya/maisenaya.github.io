@@ -229,7 +229,9 @@ footer {
 }
 
 
-.frame::before {
+
+/* ran thru problems in safari, replacing it with a fall back code created with the help of chat gpt */
+/* .frame::before {
     /* Create a pseudo-element to overlay the image */
     content: "";
     background-color: hsl(var(--fun), 40%, 30%);
@@ -242,7 +244,38 @@ footer {
     /* Ensure it's above the image */
     mix-blend-mode: hue;
     opacity: .5;
+} */
+
+/* start of fall back code created with chat gpt help */
+/* Default styles for all browsers */
+.frame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: .5;
 }
+
+/* CSS for browsers that support filters and mix-blend-mode */
+@supports (filter: blur(1px)) and (mix-blend-mode: hue) {
+    .frame::before {
+        background-color: hsl(var(--fun), 40%, 30%);
+        mix-blend-mode: hue;
+    }
+}
+
+/* Fallback styles for browsers that do not support filters or mix-blend-mode */
+@supports not ((filter: blur(1px)) and (mix-blend-mode: hue)) {
+    .frame::before {
+        background-color: rgba(255, 0, 0, 0.5); /* Fallback background color */
+    }
+}
+
+/* end of fall back code created with chat gpt help */
+
 
 .frame img {
     max-width: 300px;
