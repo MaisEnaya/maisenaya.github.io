@@ -260,21 +260,6 @@ footer {
 
 
 /* ran thru problems in safari, replacing it with a fall back code created with the help of chat gpt */
-.frame::before {
-    /* Create a pseudo-element to overlay the image */
-
-    content: "";
-    background-color: hsl(var(--fun), 40%, 30%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    /* Ensure it's above the image */
-    mix-blend-mode: hue;
-    opacity: .5;
-}
 
 
 /* start of fall back code created with chat gpt help */
