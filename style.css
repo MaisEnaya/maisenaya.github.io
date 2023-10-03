@@ -16,6 +16,14 @@
 
 }
 
+.screen-reader-only {
+    position: absolute;
+    width: 1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 body {
     background-color: var(--white);
     /* background-color: hsl(var(--fun), 100%, 90%); */
@@ -68,21 +76,40 @@ h3 {
 
 p {
     font-family: 'Cabin', sans-serif;
+    text-wrap: balance;
+    /* more on line breaks https://css-tricks.com/where-lines-break-is-complicated-heres-all-the-related-css-and-html/
+    it prevents the visual issue of footer p putting just the heart in a new line in mobile screen */
 }
+
 
 .fun-text {
     color: hsl(var(--fun), 60%, 30%);
     margin: -.5em 0 !important;
 }
 
+/* links styling */
 a {
     text-decoration: none;
+    display: flex;
+    align-items: baseline;
 
 }
 
 a:hover {
     text-decoration: underline;
     color: hsl(var(--fun), 80%, 40%);
+}
+
+/* a[target="_blank"]::after {} */
+
+a svg {
+    fill: hsl(var(--fun), 60%, 30%);
+    height: 24px;
+}
+
+/* .funHover:hover .frame  */
+a:hover svg {
+    fill: hsl(var(--fun), 80%, 40%);
 }
 
 /* end of fonts styling */
@@ -231,8 +258,9 @@ footer {
 
 
 /* ran thru problems in safari, replacing it with a fall back code created with the help of chat gpt */
-/* .frame::before {
+.frame::before {
     /* Create a pseudo-element to overlay the image */
+
     content: "";
     background-color: hsl(var(--fun), 40%, 30%);
     position: absolute;
@@ -244,7 +272,8 @@ footer {
     /* Ensure it's above the image */
     mix-blend-mode: hue;
     opacity: .5;
-} */
+}
+
 
 /* start of fall back code created with chat gpt help */
 /* Default styles for all browsers */
@@ -270,7 +299,8 @@ footer {
 /* Fallback styles for browsers that do not support filters or mix-blend-mode */
 @supports not ((filter: blur(1px)) and (mix-blend-mode: hue)) {
     .frame::before {
-        background-color: rgba(255, 0, 0, 0.5); /* Fallback background color */
+        background-color: hsl(var(--fun), 40%, 30%);
+        /* Fallback background color */
     }
 }
 
