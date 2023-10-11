@@ -1,0 +1,44 @@
+<!-- October 1, 2023. I tested the landing page I have as of right now for accessibliyy using https://accessibe.com/accessscan? 
+modification to be made before processing are: 
+1.limit H1 to just one, as I had it used for styling purposes in the scroll arrow and lets get in touch text
+2.Links that open in a new tab or a new window should either have an "aria-label" attribute or a screen-reader only element explaining to screen-readers that this opens in a new tab.
+3.add hidden links that by clicking on them (either using keyboard navigation or a screen-reader), the user will "skip" certain blocks directly to main landmarks such as main content, menu or footer.
+
+1 and 2 have been implemnted. 2 can be improved by adding a warning on hover
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Mais Enaya</title>
+    <link rel="icon" href="favicon_io\favicon-32x32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon_io\favicon-32x32.png" type="image/x-icon">
+    <!-- fonts import -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Playfair+Display:ital,wght@0,900;1,900&family=Raleway:wght@700&display=swap');
+    </style>
+</head>
+
+<body id="content">
+<!-- nav bar adapted from a11ymaaters, Accessible Mobile Navigation publihsed on Sunday, September 18, 2016 by Ahmad Shadeed -->
+    <header>
+
+<nav role="navigation">
+    <h3> <a href="#">Mais Enaya</a> </h3>
+<button id="toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+<ul id="menu">
+<li><a href="#"><h3>Work</h3></a></li>
+<li><a href="#"><h3>About</h3></a></li>
+<li><a href="#"><h3>Resume</h3></a></li>
+</ul>
+</nav>
+    </header>
+    
+</body>
+
+</html>

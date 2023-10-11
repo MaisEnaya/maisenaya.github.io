@@ -92,7 +92,7 @@ a {
     text-decoration: none;
     display: flex;
     align-items: baseline;
-
+    color: var(--black);
 }
 
 a:hover {
@@ -114,6 +114,25 @@ a:hover svg {
 
 /* end of fonts styling */
 
+
+/* navigation  */
+
+nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #8B3779;
+}
+nav ul{
+list-style: none;
+display: inline-grid;
+grid-template-columns: repeat(3, 1fr)
+}
+
+#toggle{
+    display: none;
+}
+
+/* end of navigation styling */
 /* buttons */
 /* resetting defualt button styling */
 button {
@@ -274,15 +293,17 @@ footer {
 /* CSS for browsers that support filters and mix-blend-mode */
 @supports (filter: blur(1px)) and (mix-blend-mode: hue) {
     .frame::before {
-        background-color: hsl(var(--fun), 40%, 30%);
+       /* background-color: hsl(var(--fun), 40%, 30%);*/
         mix-blend-mode: hue;
     }
 }
 
 /* Fallback styles for browsers that do not support filters or mix-blend-mode */
+
 @supports not ((filter: blur(1px)) and (mix-blend-mode: hue)) {
     .frame::before {
-        background-color: rgba(255, 0, 0, 0.5); /* Fallback background color */
+        /* background-color: rgba(255, 0, 0, 0.5);  */
+        /* Fallback background color */
     }
 }
 
@@ -296,6 +317,7 @@ footer {
     height: 300px;
     object-fit: cover;
     margin: auto;
+    mix-blend-mode: multiply;
 }
 
 .img-container {
