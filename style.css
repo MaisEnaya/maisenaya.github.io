@@ -115,21 +115,55 @@ a:hover svg {
 /* end of fonts styling */
 
 
-/* navigation  */
+/* navigation adapted from a11ymaaters, Accessible Mobile Navigation publihsed on Sunday, September 18, 2016 by Ahmad Shadeed */
 
-nav{
+nav {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     background-color: #8B3779;
+
+    grid-template-columns: 1fr;
+}
+
+nav ul {
+    list-style: none;
+    display: none;
+}
+
+nav ul.is-active {
+    display: block;
+}
+
+nav a {
+    display: block;
+}
+
+#toggle {
+    display: block;
+}
+
+nav li {
+    text-align: center;
+    margin:]]]]\;
 }
 nav ul{
-list-style: none;
-display: inline-grid;
-grid-template-columns: repeat(3, 1fr)
+
+    grid-template-columns: repeat(3, 1fr)
 }
 
-#toggle{
-    display: none;
+@media (min-width: 700px) {
+    nav{
+
+    grid-template-columns: 1fr 1fr; 
+    }
+    nav ul {
+        display: inline-grid;
+    }
+
+    #toggle {
+        display: none;
+    }
+
+
 }
 
 /* end of navigation styling */
@@ -293,7 +327,7 @@ footer {
 /* CSS for browsers that support filters and mix-blend-mode */
 @supports (filter: blur(1px)) and (mix-blend-mode: hue) {
     .frame::before {
-       /* background-color: hsl(var(--fun), 40%, 30%);*/
+        /* background-color: hsl(var(--fun), 40%, 30%);*/
         mix-blend-mode: hue;
     }
 }

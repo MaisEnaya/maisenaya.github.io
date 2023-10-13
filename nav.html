@@ -30,15 +30,26 @@ modification to be made before processing are:
 
 <nav role="navigation">
     <h3> <a href="#">Mais Enaya</a> </h3>
-<button id="toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+<button id="toggle" aria-expanded="true" aria-controls="menu">
+<!-- drawing a hamburger in svg, rx controls border raduis -->
+<svg alt=”menu” viewbox=" 0 0 120 80" width="40" height="40">
+<rect y="30" width="120" height="16" rx="8"></rect>
+<rect y="60" width="120" height="16" rx="8"></rect>
+<rect y=90" width="120" height="16" rx="8"></rect>
+</svg>
+
+</button>
 <ul id="menu">
+
 <li><a href="#"><h3>Work</h3></a></li>
 <li><a href="#"><h3>About</h3></a></li>
 <li><a href="#"><h3>Resume</h3></a></li>
 </ul>
 </nav>
     </header>
-    
+     <script src="script.js"></script>
+
 </body>
 
 </html>
+
